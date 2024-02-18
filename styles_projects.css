@@ -1,0 +1,110 @@
+/* Font Faces */
+@font-face {
+  font-family: "DINLight";
+  src: url("fonts/DIN Light Regular.woff2") format("woff2"),
+    url("fonts/DIN Light Regular.woff") format("woff"),
+    url("fonts/DIN Light Regular.ttf") format("truetype");
+}
+
+/* Base Styles */
+body {
+  font-family: "DINLight", "Roboto Mono", "Courier Prime", sans-serif;
+  background-color: #000000;
+  margin: 0;
+  padding: 20px; /* Unified padding */
+  color: white;
+  max-width: 100vw;
+  max-height: 100vh;
+  overflow-x: hidden;
+}
+
+header {
+  text-align: left;
+  max-width: 90%;
+}
+
+.logo {
+  padding: 10px;
+  max-height: 15vh;
+}
+
+header title {
+  padding: 10px;
+}
+
+/* Footer Styles */
+footer {
+  text-align: center;
+  padding: 10px;
+  font-size: 0.8em;
+}
+
+/* Layout Styles */
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align items to the start */
+  justify-content: top;
+  height: 70vh;
+  text-align: left;
+  width: 100%;
+}
+
+.column p,
+.column ul {
+  width: 100%;
+}
+
+.column p {
+  font-size: 2.5em;
+}
+
+.column ul {
+  font-size: 2.5vh;
+}
+
+/* Responsive Design Adjustments */
+@media (min-width: 600px) {
+  body {
+    overflow-y: hidden;
+  }
+
+  .container {
+    flex-direction: row; /* Columns side by side */
+  }
+
+  .column {
+    max-width: 50%; /* Adjust column width */
+    height: 100vh;
+  }
+
+  .hide {
+    visibility: visible !important;
+    height: auto !important;
+    max-height: 40vh !important;
+    display: block;
+    max-width: 45vw !important;
+  }
+}
+
+.collapse {
+  height: auto; /* Adjusted height */
+}
+
+.hide {
+  visibility: hidden;
+  height: 1px;
+}
+
+.bottom {
+  position: sticky;
+  bottom: 0;
+  align-self: center !important;
+  width: 100%;
+  background-color: #000000;
+}

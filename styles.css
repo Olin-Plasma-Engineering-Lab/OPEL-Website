@@ -1,0 +1,139 @@
+/* Font Faces */
+@font-face {
+  font-family: "DINLight";
+  src: url("fonts/DIN Light Regular.woff2") format("woff2"),
+    url("fonts/DIN Light Regular.woff") format("woff"),
+    url("fonts/DIN Light Regular.ttf") format("truetype");
+}
+
+/* Base Styles */
+body {
+  font-family: "DINLight", "Ropa Sans", "Courier Prime", sans-serif;
+  background-color: #000000;
+  margin: 0;
+  padding: 20px; /* Unified padding */
+  color: white;
+  max-width: 100vw;
+  max-height: 100vh;
+  overflow-x: hidden;
+}
+
+header {
+  text-align: left;
+}
+
+header p {
+  margin-top: 0 !important; /* Ensures no top margin for paragraphs inside header */
+}
+
+.logo {
+  padding: 10px;
+  max-height: 15vh;
+}
+
+/* Navigation Styles */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0; /* Removes default margin */
+  width: 100% !important;
+  font-family: "Roboto Mono", "Helvetica Neue", Helvetica, Arial;
+}
+
+nav li {
+  margin-bottom: 10px; /* Adds space between list items */
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  position: relative; /* Required for pseudo-element positioning */
+  display: inline; /* Adjusted to 'inline' for better flow */
+  padding: 0; /* Reset padding */
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0; /* Initially hidden underline */
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: white;
+  transition: width 0.4s ease-out;
+  transform: translateX(-50%);
+  visibility: hidden; /* Hidden by default */
+}
+
+nav a:hover::after {
+  width: 100%; /* Full width on hover */
+  transform: translateX(0%);
+  visibility: visible; /* Makes underline visible on hover */
+}
+
+/* Footer Styles */
+footer {
+  text-align: center;
+  /* padding: 10px; */
+  font-size: 0.8em;
+}
+
+/* Layout Styles */
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align items to the start */
+  justify-content: center;
+  height: 70vh;
+  text-align: left;
+  width: 100%;
+}
+
+.column p,
+.column ul {
+  width: 100%;
+}
+
+.column nav ul {
+  list-style-type: none;
+  font-size: 1.5em;
+  line-height: 1.25em;
+  font-weight: 50;
+}
+
+.column p {
+  font-size: 2.25em;
+}
+
+/* Responsive Design Adjustments */
+@media (min-width: 600px) {
+  body {
+    background-image: url("img/background_img.png"); /* Background image for wider screens */
+    overflow-y: hidden;
+  }
+  .container {
+    flex-direction: row; /* Columns side by side */
+  }
+  .column {
+    width: 50%; /* Adjust column width */
+    height: 90vh;
+  }
+}
+
+.collapse {
+  padding-top: 15px;
+  height: 50px !important; /* Adjusted height */
+}
+
+.bottom {
+  position: sticky;
+  bottom: 0;
+  align-self: center !important;
+  width: 100%;
+  background-color: #000000;
+}
