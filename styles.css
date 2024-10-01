@@ -114,6 +114,9 @@ footer {
 @media (min-width: 600px) {
   body {
     background-image: url("img/background_img.png"); /* Background image for wider screens */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
     overflow-y: hidden;
   }
   .container {
